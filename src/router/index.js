@@ -12,12 +12,22 @@ export default new Router({
       children:[
         {
           path: 'FrienfShipLinks',
-          name: '友情链接管理',
+          name: 'FrienfShipLinks',
           component: resolve => require(['@/components/AppInterface/FrienfShipLinks'], resolve),
         },
         {
+          path: 'ApiMaintain',
+          name: 'ApiMaintain',
+          component: resolve => require(['@/components/AppInterface/ApiMaintain'], resolve),
+        },
+        {
+          path: 'ApiMaintainDetail',
+          name: 'ApiMaintainDetail',
+          component: resolve => require(['@/components/AppInterface/ApiMaintainDetail'], resolve),
+        },
+        {
           path: 'upload',
-          name: '上传',
+          name: 'upload',
           component: resolve => require(['@/component_pack/uploadImg'], resolve),
         }
       ],

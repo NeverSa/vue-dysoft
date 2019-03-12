@@ -11,6 +11,8 @@ import "@/assets/Nifty/js/nifty.js"
 import "@/assets/Nifty/js/demo/nifty-demo.js"
 import "./assets/Nifty/themify-icons/themify-icons.min.css"
 
+import "@/assets/ionicons/css/ionicons.min.css"
+import "@/assets/css/public.less"
 import Utils from "@/lib/Utils"//通用工具类
 // 引入样式
 import 'vue-easytable/libs/themes-base/index.css'

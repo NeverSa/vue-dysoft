@@ -209,7 +209,6 @@
     <div class="boxed">
       <div id="content-container">
         <breadCrumbs :nav="menuData"  ref="nav"></breadCrumbs>
-        
         <div id="page-content">
           <router-view></router-view>
         </div>
@@ -289,14 +288,13 @@
                     class="list-header"
                     v-if="item.header"
                   >
-                    {{item.name}} {{item.header}}
+                    {{item.name}} 
                   </li>
                   <li
                     v-else
                     :class="{'active':item.isSubShow,'active-link':item.isSubShow&&!(item.children&&item.children.length>0)}"
                   >
                     <a
-                      href="#"
                       @click.stop="showToggle(item)"
                     >
                       <i class="ti-user"></i>
@@ -317,7 +315,7 @@
                         :class="{'active-link':item1.isSubShow}"
                         v-for="item1 in item.children"
                         @click.stop="showToggle(item1,item.children)"
-                      ><a href="#">{{item1.name}}</a></li>
+                      ><a >{{item1.name}}</a></li>
                     </ul>
                   </li>
                   <li class="list-divider"></li>
@@ -363,7 +361,7 @@ export default {
               name: "友情链接管理",
               icon: "ti-help-alt",
               header: false,
-              link: "",
+              link: "FrienfShipLinks",
               isSubShow: false
             },
           ]
@@ -380,7 +378,7 @@ export default {
               name: "接口维护",
               icon: "ti-help-alt",
               header: false,
-              link: "",
+              link: "ApiMaintain",
               isSubShow: false
             },
              {
@@ -550,6 +548,7 @@ export default {
         menu.isSubShow = !menu.isSubShow;
       }
        this.$refs.nav.updatatitle();
+       this.$router.push({name: menu.link}) 
     }
     
   },

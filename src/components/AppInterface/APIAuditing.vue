@@ -11,14 +11,7 @@
               <div class="badge-span" v-for="(item,index) in apiClassList">
                 <span class="badge " :class="{'badge-info':curIndex==index}" @click="clickApiClass(index)">{{item.text}}</span>
               </div>
-              <div class="badge-span">
-                <button id="addtypename" class="btn btn-xs btn-default addbtn" @click="addApiClass()">
-                  <i class="ti-plus"></i>
-                </button>
-                <button id="addtypename" class="btn btn-xs btn-default addbtn" @click="editApiClassNew()">
-                  <i class="glyphicon glyphicon-pencil"></i>
-                </button>
-              </div>
+             
             </dd>
           </dl>
         </div>
@@ -30,11 +23,6 @@
                 <button class="text-muted" type="button" @click="searchData()"><i class="ti-search"></i></button>
               </span>
             </div>
-          </div>
-          <div class="float-r pull-right">
-            <button id="btnMarkAll" class="btn btn-primary" @click="generate()">全部生成</button>
-            <button id="addapi" class="btn btn-primary">添加</button>
-            <button class="btn btn-primary">导出</button>
           </div>
         </div>
       </div>
@@ -60,11 +48,6 @@
                   <span>已发布（<a class="text-primary">{{item.PublishedCount}}</a>）</span>
                 </div>
               </div>
-            </div>
-            <div class="pos-abs listedit">
-              <a class="text-primary mar-rgt block_edit" ng-click="CreateDoc(item.DataFunClassId)">生成</a>
-              <a class="text-primary mar-rgt block_edit" ng-click="editDataFun(item.DataFunClassId)">修改</a>
-              <a class="text-primary mar-rgt" ng-click="deleteDataFun(item.DataFunClassId)">删除</a>
             </div>
           </div>
         </div>
@@ -105,25 +88,6 @@
               <div class="text-center ">
                 <button type="button" class="btn btn-primary" ng-click="saveApiClass()">保存</button>
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--接口生成文档遮盖窗口-->
-    <div class="modal fade" id="MakeDocProgress-modal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">正在生成接口文档。。。</h4>
-          </div>
-          <div class="modal-body">
-            <div class="form-horizontal">
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                  <span class="sr-only"></span>
-                </div>
               </div>
             </div>
           </div>
@@ -228,7 +192,7 @@ export default {
   mounted() {},
   methods: {
     lookDetail(id) {
-      this.$router.push({ name: "ApiMaintainDetail", query: { id: id } });
+      this.$router.push({ name: "APIAuditingDetail", query: { id: id } });
     },
     deleteApiClassNew(id) {
       this.$u.confirm("确定删除该功能分类吗？", function(r) {});
@@ -236,28 +200,7 @@ export default {
     clickApiClass(index) {
       this.curIndex = index;
     },
-    addApiClass() {
-      $("#addtypename-modal").modal({
-        keyboard: false,
-        backdrop: "static"
-      });
-    },
-    editApiClassNew() {
-      $("#editApiClass").modal({
-        keyboard: false,
-        backdrop: "static"
-      });
-    },
-    generate() {
-      $("#MakeDocProgress-modal").modal({
-        keyboard: false,
-        backdrop: "static"
-      });
-      setTimeout(() => {
-        $("#MakeDocProgress-modal").modal("hide");
-        this.$u.info("生成成功!", { type: "success" });
-      }, 1000);
-    },
+  
     searchData() {
       alert("搜索");
     }

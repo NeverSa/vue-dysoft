@@ -385,14 +385,14 @@ export default {
               name: "接口审核",
               icon: "ti-help-alt",
               header: false,
-              link: "",
+              link: "APIAuditing",
               isSubShow: false
             },
              {
               name: "接口请求统计",
               icon: "ti-help-alt",
               header: false,
-              link: "",
+              link: "ReqStatistic",
               isSubShow: false
             },
              {

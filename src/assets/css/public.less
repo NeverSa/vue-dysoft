@@ -165,3 +165,112 @@ li {
 .listedit:hover {
 	display: block;
 }
+
+
+.panel-heading>h4,
+.panel-heading>h3,
+.panel-title {
+	margin: 0 !important;
+	height: 56px;
+	line-height: 56px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.panel-heading {
+	padding: 0 15px;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 56px;
+	min-height: 56px;
+	height: auto;
+	padding-left: 30px;
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	position: relative;
+  border-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel-heading:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 15px !important;
+	right: 15px !important;
+	height: 1px;
+	background-color: #e6e6e6;
+}
+
+.panel-heading:before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 14px;
+	width: 6px;
+	background-color: #ffc73c;
+	top: 21px;
+	left: 15px;
+}
+
+.panel-heading .selcet_head {
+	overflow: auto;
+	display: table;
+	float: left;
+}
+
+.panel-heading .selcet_head span {
+	display: inline-block;
+	padding-right: 30px;
+	position: relative;
+	color: #99a4af;
+	cursor: pointer;
+}
+
+.panel-heading .selcet_head span.active {
+	color: #364051;
+}
+
+.panel-heading .selcet_head span:after {
+	content: "";
+	position: absolute;
+	right: 15px;
+	top: 20px;
+	bottom: 20px;
+	background-color: #959595;
+	width: 1px;
+}
+
+.panel-heading .selcet_head span:last-child:after {
+	display: none;
+}
+
+.panel-control {
+	padding: 0;
+}
+
+.panel-control .btn-default {
+	background-color: #fcfcfc;
+	color: #758697;
+	border: 1px solid #e1e6e9 !important;
+}
+
+.panel-control .btn {
+	padding: 3px 14px;
+	margin-left: 12px;
+	font-size: 12px;
+}
+
+.panel-control .btn-group {
+	margin-left: 12px;
+}
+
+.panel-body {
+	padding: 15px;
+}
+.form-horizontal .form-group{margin-left: 0px;margin-right: 0px;display: flex}
+.ml15{margin-left:15px;}
+.mytable {width: 100%}
+.form-horizontal .control-label{margin-bottom: 0px;}
+.line .form-group{display: inline-block}
